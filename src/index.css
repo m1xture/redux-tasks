@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding-top: 30px;
+  padding-right: 3vw;
+  padding-left: 3vw;
+}
+
+body {
+  @apply bg-slate-900;
+}
+.filter--active {
+  @apply bg-slate-700;
+}
+::-webkit-scrollbar {
+  width: 5.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-500;
+  border-radius: 20px;
+}
