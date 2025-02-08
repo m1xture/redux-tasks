@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setFilter } from "../../redux/actions";
+import { setFilter } from "../../redux/filter/filterSlice";
 import { useRef } from "react";
 
 const Filter = () => {
@@ -23,7 +23,7 @@ const Filter = () => {
     dispatch(setFilter(type));
   };
   return (
-    <div>
+    <div className="">
       <h3 className="text-slate-300 mb-3">Filter by status</h3>
       <button
         id="all"

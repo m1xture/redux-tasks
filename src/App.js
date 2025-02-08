@@ -6,7 +6,7 @@ import Filter from "./components/Filter/Filter";
 function App() {
   return (
     <>
-      <div className="w-[60vw] ml-auto mr-auto flex justify-between items-end flex-wrap">
+      <div className="w-[60vw] ml-auto mr-auto flex justify-between items-center gap-5 flex-wrap lg:items-end lg:gap-0">
         <AddForm />
         <Filter />
         <Counter />

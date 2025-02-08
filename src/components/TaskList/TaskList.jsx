@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import Task from "../Task/Task";
 import { useEffect, useRef } from "react";
-import { addManyTasks, addTask } from "../../redux/actions";
+import { addManyTasks } from "../../redux/tasks/tasksSlice";
+import { Fade } from "react-awesome-reveal";
 
 const filters = {
   all() {
@@ -55,11 +56,13 @@ const TaskList = () => {
     );
   }
   return (
-    <ul className="flex items-center flex-col gap-4 pt-10 w-[60vw] ml-auto mr-auto">
-      {state.tasks.map((task) => (
-        <Task key={task.id} task={task} />
-      ))}
-    </ul>
+    <Fade className="w-[100%]">
+      <ul className="flex items-center flex-col gap-4 pt-10 w-[60vw] ml-auto mr-auto">
+        {state.tasks.map((task) => (
+          <Task key={task.id} task={task} />
+        ))}
+      </ul>
+    </Fade>
   );
 };
 

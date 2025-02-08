@@ -1,11 +1,22 @@
 import { useDispatch } from "react-redux";
-import { addTask } from "../../redux/actions";
+import { addTask } from "../../redux/tasks/tasksSlice";
+import { toast } from "react-toastify";
 
 const AddForm = () => {
   const dispatch = useDispatch();
   const submitFn = (e) => {
     e.preventDefault();
     const text = e.target.title.value.trim();
+    if (text.length === 0)
+      return toast.error("Empty task", {
+        theme: "dark",
+        hideProgressBar: true,
+      });
+    if (text.length < 4)
+      return toast.error("Too short task", {
+        theme: "dark",
+        hideProgressBar: true,
+      });
     dispatch(addTask(text));
     e.target.reset();
   };
