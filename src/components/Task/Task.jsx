@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import { deleteTask, completeTask } from "../../redux/tasks/tasksSlice";
 import TrashIcon from "../../images/trash.svg";
 import { Checkbox } from "@mui/material";
 import CheckboxIcon from "../../images/checkbox.svg";
+import { deleteTask, completeTask } from "../../redux/tasks/operations";
 
 const Task = ({ task }) => {
   const dispatch = useDispatch();
@@ -24,7 +24,10 @@ const Task = ({ task }) => {
   };
   const endTask = (e) => {
     const id = e.target.closest("li").id;
-    dispatch(completeTask(id));
+
+    dispatch(
+      completeTask({ id, completed: !task.completed, title: task.title })
+    );
   };
   return (
     <li

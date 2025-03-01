@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import { addTask } from "../../redux/tasks/tasksSlice";
+// import { addTask } from "../../redux/tasks/tasksSlice";
+import { addTask } from "../../redux/tasks/operations";
 import { toast } from "react-toastify";
 
 const AddForm = () => {
@@ -17,7 +18,7 @@ const AddForm = () => {
         theme: "dark",
         hideProgressBar: true,
       });
-    dispatch(addTask(text));
+    dispatch(addTask({ title: text, completed: false }));
     e.target.reset();
   };
   return (

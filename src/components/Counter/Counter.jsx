@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 
 const Counter = () => {
-  const tasks = useSelector((state) => state.tasks);
+  const tasks = useSelector((state) => state.tasks.tasks);
+  console.log(tasks);
   return (
     <div className="">
       <h2 className="text-lg text-slate-200 text-right">Tasks</h2>
